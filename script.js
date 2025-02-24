@@ -1,18 +1,18 @@
 function makeChange(c) {
-    let c = { q: 0, d: 0, n: 0, p: 0 };
+    let change = { q: 0, d: 0, n: 0, p: 0 };
 
-    c.q = Math.floor(amount / 25); 
-    amount %= 25; 
+    change.q = Math.floor(c / 25); // Get number of quarters
+    c %= 25; // Remaining amount
 
-    c.d = Math.floor(amount / 10); 
-    amount %= 10; 
+    change.d = Math.floor(c / 10); // Get number of dimes
+    c %= 10; // Remaining amount
 
-    c.n = Math.floor(amount / 5); 
-    amount %= 5; 
+    change.n = Math.floor(c / 5); // Get number of nickels
+    c %= 5; // Remaining amount
 
-    c.p = amount; 
+    change.p = c; // Remaining amount is all pennies
 
-    return c;
+    return change;
 }
 
 
